@@ -1,0 +1,17 @@
+FROM alpine:3.17
+
+COPY nwipe /tmp/nwipe
+WORKDIR /tmp/build
+
+RUN apk update \
+&& apk upgrade \
+&& apk add automake make curl ncurses-dev libevent parted-dev libconfig-dev hdparm dmidecode smartmontools autoconf gcc g++ linux-headers \
+&& ash autogen.sh \
+&& ash configure \
+&& make \
+&& make install \
+&& cd /tmp \
+&& apk del automake make autoconf gcc g++ \
+&& rm -rf build
+
+CMD ["/usr/local/bin/nwipe"]
