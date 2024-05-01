@@ -1,0 +1,3 @@
+[submodule "nwipe"]
+	path = nwipe
+	url = https://github.com/martijnvanbrummelen/nwipe.git
