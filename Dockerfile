@@ -1,7 +1,7 @@
 FROM alpine:3.17
 
 COPY nwipe /tmp/nwipe
-WORKDIR /tmp/build
+WORKDIR /tmp/nwipe
 
 RUN apk update \
 && apk upgrade \
@@ -12,6 +12,6 @@ RUN apk update \
 && make install \
 && cd /tmp \
 && apk del automake make autoconf gcc g++ \
-&& rm -rf build
+&& rm -rf nwipe
 
 CMD ["/usr/local/bin/nwipe"]
