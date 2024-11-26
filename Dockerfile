@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ADD https://github.com/martijnvanbrummelen/nwipe.git /tmp/
+ADD https://github.com/martijnvanbrummelen/nwipe.git /tmp/nwipe
 WORKDIR /tmp/nwipe
 
 RUN apk update \
